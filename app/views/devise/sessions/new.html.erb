@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <style type="text/css">
+        /*body{*/
+
+        /*    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlm7s63ft-ZBmmCkgQZ8DcytEydepLqEbyG4rMisDNO4pOFvRr);*/
+
+        /*}*/
+
+        #box{
+            border: 1px solid rgb(200, 200, 200);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
+            background: rgba(200, 200, 200, 0.1);
+            border-radius: 4px;
+            top:50px;
+            margin-left: 500px;
+            margin-top: 50px;
+        }
+
+        h2{
+            text-align:center;
+            color:black;
+        }
+
+
+    </style>
+</head>
+
+//////////////////////////////////////////////////////////////////
+<h2>Log in</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, required: false, autofocus: true %>
+    <%= f.input :password, required: false %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+///////////////////////////////////////////////////////////////////////
+
+<body>
+  <nav class="navbar navbar-light bg-faded">
+    <a class="navbar-brand" href="#">
+    <img src="http://1.bp.blogspot.com/-xveoGuroTlw/VMiZaamwU4I/AAAAAAAAl20/3SX4Pd8wv6Y/s1600/%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%90+%EB%A1%9C%EA%B3%A0.png" width="40" height="30" class="d-inline-block align-top" alt="">
+    대관신청시스템
+    </a>
+  </nav>
+  <br>
+  <div class="col-md-offset-4 col-md-4" id="box">
+    <h2>Login</h2>
+    <hr>
+    <div class="text-center image_korea">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlm7s63ft-ZBmmCkgQZ8DcytEydepLqEbyG4rMisDNO4pOFvRr" class="rounded" alt="...">
+    </div>
+    <hr>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <form class="form-horizontal" action=" " method="" id="contact_form">
+        <fieldset>
+          <div class="form-inputs">
+            <div class="form-group">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user">
+                    <%= f.input :email, required: false, autofocus: true %>
+                  </i></span>
+                  <!-- <input name="first_name" placeholder="학번" class="form-control" type="text"> -->
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input name="email" placeholder="암호" class="form-control" type="text">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-md btn-danger pull-right">Login </button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    <% end %>
+  </div>
+</body>
+</html>

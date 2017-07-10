@@ -1,5 +1,16 @@
 class BuildingController < ApplicationController
-  def number
-    redirect_to "/building/#{params[:building_num]}"
+  def liberal
+  end
+
+  def buiseness
+  end
+
+  def science1
+  end
+
+  def science2
+  end
+
+  def nongshim
   end
 end
