@@ -1,0 +1,54 @@
+<div class="container" style="margin-top:50px; margin-bottom: 50px;">
+  <h1>인문대 대관 신청서</h1>
+  <hr>
+  <form action="/form/create" method="POST">
+    <div class="form-group row">
+      <label class="col-2 col-form-label">건물 번호</label>
+      <div class="col-10">
+        <input class="form-control" type="text" value="2" name="building">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">강의실</label>
+      <div class="col-10">
+        <input class="form-control" type="search" value="<%= @room_id %>" name="class_room">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">이메일</label>
+      <div class="col-10">
+        <input class="form-control" type="email" value="<%= current_user.email %>" name="email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-tel-input" class="col-2 col-form-label">휴대폰 번호</label>
+      <div class="col-10">
+        <input class="form-control" type="tel" placeholder="ex)000-0000-0000" name="phone">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">인원수</label>
+      <div class="col-10">
+        <select class="form-control" name="num_p">
+          <% (1..20).each do |n| %>
+            <option><%= n %></option>
+          <% end %>
+          <option>20 이상</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label">날짜</label>
+      <div class="col-10">
+        <input class="form-control" type="date" id="example-date-input" name="date">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-time-input" class="col-2 col-form-label">시간</label>
+      <div class="col-10">
+        <input class="form-control" type="time" id="example-time-input" name="time">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">제출</button>
+  </form>
+</div>

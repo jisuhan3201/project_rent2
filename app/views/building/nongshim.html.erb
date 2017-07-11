@@ -1,1 +1,5 @@
 <h1>농심관 강의실 페이지</h1>
+<% @rooms.each do |roomnum| %>
+  <a href="/nongshim/<%= roomnum %>"><%= roomnum %></a>
+  <br>
+<% end %>

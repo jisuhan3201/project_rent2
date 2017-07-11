@@ -1,0 +1,2 @@
+module NongshimHelper
+end

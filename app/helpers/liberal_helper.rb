@@ -1,0 +1,2 @@
+module LiberalHelper
+end
