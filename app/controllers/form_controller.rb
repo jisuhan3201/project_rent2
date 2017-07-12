@@ -22,7 +22,7 @@ class FormController < ApplicationController
   end
 
   def destroy
-    @one_post = Form.where(email_id: current_user.email).limit(1).order('created_at desc')
+    @one_post = Form.find(params[:form_id])
     @one_post.destroy
   end
 end

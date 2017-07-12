@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post 'form/create'
   get 'form/read'
   get 'form/edit'
-  get 'form/destroy'
+  get 'form/:form_id' => "form#destroy"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

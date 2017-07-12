@@ -44,6 +44,6 @@
         <p><%= user.time_of_rent %></p>
       </div>
     </div>
-    <a class="btn btn-primary" href="/form/destroy" role="button">신청내역 삭제</a>
+    <a class="btn btn-primary" href="/form/<%= user.id %>" role="button">신청내역 삭제</a>
   <% end %>
 </div>
