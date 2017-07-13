@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20170710062158) do
     t.string "email_id"
     t.string "phone"
     t.string "num_of_people"
-    t.date "date_of_rent"
-    t.time "time_of_rent"
+    t.datetime "date_of_start"
+    t.datetime "date_of_end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

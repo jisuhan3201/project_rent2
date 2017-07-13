@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'form/read'
   get 'form/edit'
   get 'form/:form_id' => "form#destroy"
+  get 'form/:form_id/update' => 'form#edit'
+  post 'updateview/:form_id' => 'form#editview'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

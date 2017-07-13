@@ -1,72 +1,14 @@
-<h3>Location</h3><a href="/users/sign_out">Log out</a>
-<div id="map"></div>
-<script>
-// The following example creates complex markers to indicate koreauniv near
-// Sydney, NSW, Australia. Note that the anchor is set to (0,32) to correspond
-// to the base of the flagpole.
-
-function initMap() {
-var map = new google.maps.Map(document.getElementById('map'), {
-  zoom: 17,
-  center: {lat: 36.6101566, lng: 127.287105}
-});
-
-setMarkers(map);
-}
-
-// Data for the markers consisting of a name, a LatLng and a zIndex for the
-// order in which these markers should display on top of each other.
-var koreauniv = [
-['science2', 36.6111009, 127.28685500000006,'/building/science2'],
-['liberal', 36.6114898, 127.28827160000003, '/building/liberal'],
-['science1', 36.60993440000001,127.28416089999996, '/building/science1'],
-['nongshim', 36.6091597,127.28566799999999, '/building/nongshim'],
-['buiseness', 36.6112676, 127.28957700000001, '/building/buiseness']
-];
-
-function setMarkers(map) {
-// Adds markers to the map.
-
-// Marker sizes are expressed as a Size of X,Y where the origin of the image
-// (0,0) is located in the top left of the image.
-
-// Origins, anchor positions and coordinates of the marker increase in the X
-// direction to the right and in the Y direction down.
-  var image = {
-    url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-    // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(20, 32),
-    // The origin for this image is (0, 0).
-    origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 32)
-  };
-// Shapes define the clickable region of the icon. The type defines an HTML
-// <area> element 'poly' which traces out a polygon as a series of X,Y points.
-// The final coordinate closes the poly by connecting to the first coordinate.
-  var shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: 'poly'
-  };
-  for (var i = 0; i < koreauniv.length; i++) {
-    var structure = koreauniv[i];
-    var marker = new google.maps.Marker({
-      position: {lat: structure[1], lng: structure[2]},
-      map: map,
-      icon: image,
-      shape: shape,
-      url: structure[3],
-      title: structure[0]
-
-    });
-    google.maps.event.addListener(marker, 'click', function() {
-    window.location.href = this.url;
-  });
-  }
-
-}
-
-</script>
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFCRuGhRUd4Xq03ylkrkUfcrPpS_LJLTA&callback=initMap">
-</script>
+<div class="container" style="margin-top:20px;">
+  <div class="row justify-content-between">
+    <div class="col-2">
+      <nav class="nav flex-column">
+        <h4><a class="nav-link" href="/building/buiseness">석원 경상관</a></h4>
+        <h4><a class="nav-link" href="/building/liberal">인문대</a></h4>
+        <h4><a class="nav-link" href="/building/science1">제 1 과기대</a></h4>
+        <h4><a class="nav-link" href="/building/science2">제 2 과기대</a></h4>
+        <h4><a class="nav-link" href="/building/nongshim">농심관</a></h4>
+      </nav>
+    </div>
+      <div class="col-10" id="map"></div>
+  </div>
+</div>

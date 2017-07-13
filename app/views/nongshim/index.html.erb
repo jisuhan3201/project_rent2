@@ -5,25 +5,25 @@
     <div class="form-group row">
       <label class="col-2 col-form-label">건물 번호</label>
       <div class="col-10">
-        <input class="form-control" type="text" value="25" name="building">
+        <input class="form-control" type="text" value="9" name="building">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-2 col-form-label">강의실</label>
       <div class="col-10">
-        <input class="form-control" type="search" value="<%= @room_id %>" name="class_room">
+        <input class="form-control" required="required" type="search" value="<%= @room_id %>" name="class_room">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-2 col-form-label">이메일</label>
       <div class="col-10">
-        <input class="form-control" type="email" value="<%= current_user.email %>" name="email">
+        <input class="form-control" required="required" type="email" value="<%= current_user.email %>" name="email">
       </div>
     </div>
     <div class="form-group row">
       <label for="example-tel-input" class="col-2 col-form-label">휴대폰 번호</label>
       <div class="col-10">
-        <input class="form-control" type="tel" placeholder="ex)000-0000-0000" name="phone">
+        <input class="form-control" type="tel" required="required" placeholder="ex)000-0000-0000" name="phone">
       </div>
     </div>
     <div class="form-group row">
@@ -38,17 +38,18 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="example-date-input" class="col-2 col-form-label">날짜</label>
+      <label for="example-date-input" class="col-2 col-form-label">시작</label>
       <div class="col-10">
-        <input class="form-control" type="date" id="example-date-input" name="date">
+        <input class="form-control" required="required" type="datetime-local" id="example-date-input" name="date_s">
       </div>
     </div>
     <div class="form-group row">
-      <label for="example-time-input" class="col-2 col-form-label">시간</label>
+      <label for="example-time-input" class="col-2 col-form-label">종료</label>
       <div class="col-10">
-        <input class="form-control" type="time" id="example-time-input" name="time">
+        <input class="form-control" required="required" type="datetime-local" id="example-time-input" name="date_e">
       </div>
     </div>
+    <a class="btn btn-primary" href="/" role="button">홈으로</a>
     <button type="submit" class="btn btn-primary">제출</button>
   </form>
 </div>
